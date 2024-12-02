@@ -73,7 +73,7 @@ compress_audio() {
     # Run the compression tool
     PYTHON=$(which python3)
     echo "Running GMTools on data and audiogroups."
-    $PYTHON ./tools/gmKtool.py -vv -m 1000 -r -b 64 -d "$TMPDIR" "$DATADIR/game.droid"
+    $PYTHON ./tools/gmKtool.py -vv -D -R 22050 -m 0 -r -b 32 -d "$TMPDIR" "$DATADIR/game.droid"
 
     if [ $? -eq 0 ]; then
         echo "Compression completed successfully."
